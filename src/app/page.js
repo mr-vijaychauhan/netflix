@@ -58,6 +58,24 @@ async function getTvShows() {
   return results
 }
 
+async function getAllMoviesGenres() {
+  const res = await fetch(Request.requestMoviesGenres,
+    {
+      cache: "no-cache"
+    })
+  const results = res.json();
+  return results
+}
+
+async function getAllTvShowGenres() {
+  const res = await fetch(Request.requestTvShowsGenres,
+    {
+      cache: "no-cache"
+    })
+  const results = res.json();
+  return results
+}
+
 const page = async () => {
   
   const populars = await getPopular(); 
@@ -66,10 +84,12 @@ const page = async () => {
   const topRated = await getTopRated(); 
   const horror = await getHorror(); 
   const tvshows = await getTvShows(); 
+  const moviegenres = await getAllMoviesGenres(); 
+  const tvgenres = await getAllTvShowGenres(); 
 
   return (
     <div>
-      <Navbar />
+      <Navbar moviesGenres={moviegenres} tvGenres={tvgenres} />
       <Hero />
       <Row rowID="1" title="Upcoming"  movies={upcoming}/>
       <Row rowID="2" title="Popular" movies={populars}/>

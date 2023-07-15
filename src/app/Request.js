@@ -8,6 +8,8 @@ const requests = {
     requestUpcoming: `https://api.themoviedb.org/3/movie/upcoming?api_key=${key}&language=en-US&page=1`,
     requestNowPlaying: `https://api.themoviedb.org/3/movie/now_playing?api_key=${key}&language=en-US&page=1`,
     requestTvShows: `https://api.themoviedb.org/3/tv/popular?api_key=${key}&language=en-US&page=1`,
+    requestMoviesGenres :`https://api.themoviedb.org/3/genre/movie/list?api_key=${key}`,
+    requestTvShowsGenres :`https://api.themoviedb.org/3/genre/tv/list?api_key=${key}`,
     imagePath: 'https://image.tmdb.org/t/p/original',
     imagePath_w500: 'https://image.tmdb.org/t/p/w500'
   };

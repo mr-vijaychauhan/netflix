@@ -1,7 +1,11 @@
 import Link from 'next/link'
 import {FaSortDown} from 'react-icons/fa'
 
-const Navbar = () => {
+const Navbar = ({moviesGenres,tvGenres}) => {
+
+  const moviesAllGenres=moviesGenres.genres;
+  const tvAllGenres=tvGenres.genres;
+
   return (
     <div
       className="w-full flex items-center justify-between p-4 z-[100] absolute"
@@ -9,24 +13,36 @@ const Navbar = () => {
     >
       
       <Link href={'/'} ><h1 className="text-4xl font-medium text-red-500">NETFLIX</h1></Link>
-      <div>
-        <ul className='hidden lg:flex  items-center justify-center gap-4'>
+      <div className=''>
+        <ul className='relative hidden lg:flex  items-center justify-center gap-4'>
           <li className='hover:bg-red-700 hover:rounded-3xl hover:text-white hover:px-3 hover:py-2 transition-all'>Home</li>
-          <li className='relative'><a href="#" className='flex justify-center items-baseline hover:bg-red-700 hover:rounded-3xl hover:text-white hover:px-3 hover:py-2 transition-all relative'>Movies <span><FaSortDown/></span> </a>
-          <div className="hidden transition-all absolute left-3 ">
-              <div className='w-full h-[240px] border-red-300 bg-red-400'>
-              <ul className="text-white">
-                  <li>1</li>
-                  <li>2</li>
-                  <li>3</li>
-                  <li>4</li>
-                  
+          <li className='group '><a href="#" className='flex justify-center items-baseline hover:bg-red-700 hover:rounded-3xl hover:text-white hover:px-3 hover:py-2 transition-all'>Movies <span><FaSortDown/></span> </a>
+          <div className="hidden group-hover:block transition-all absolute left-0">
+              <div className='w-[600px] h-[200px] border-red-300 bg-black/90 shadow-sm shadow-red-700'>
+              <ul className="text-white grid grid-cols-4 gap-1 p-4 w-full">
+              {
+                moviesAllGenres.map(({id,name,index})=>(
+                  <li key={index} className=''>{name}</li>
+                ))
+              }   
                 </ul>
               </div>
-                
               </div>
           </li>
-          <li className='hover:bg-red-700 hover:rounded-3xl hover:text-white hover:px-3 hover:py-2 transition-all'>Tv Shows</li>
+          <li className='group '><a href="#" className='flex justify-center items-baseline hover:bg-red-700 hover:rounded-3xl hover:text-white hover:px-3 hover:py-2 transition-all'>Tv Shows <span><FaSortDown/></span> </a>
+          <div className="hidden group-hover:block transition-all absolute left-0">
+              <div className='w-[600px] h-[200px] border-red-300 bg-black/90 shadow-sm shadow-red-700'>
+              <ul className="text-white grid grid-cols-4 gap-1 p-4 w-full">
+              {
+                tvAllGenres.map(({id,name,index})=>(
+                  <li key={index} className=''>{name}</li>
+                ))
+              }   
+                </ul>
+              </div>
+              </div>
+          </li>
+          {/* <li className='hover:bg-red-700 hover:rounded-3xl hover:text-white hover:px-3 hover:py-2 transition-all'>Tv Shows</li> */}
         </ul>
       </div>
       <div>
