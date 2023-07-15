@@ -15,7 +15,9 @@ const truncateString = (str,num) =>{
 
 
 async function getPopular() {
-    const res = await fetch(Request.requestPopular)
+    const res = await fetch(Request.requestPopular,{
+      cache: "no-cache"
+    })
     const results = res.json();
     return results
   }

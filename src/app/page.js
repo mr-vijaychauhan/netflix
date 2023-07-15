@@ -5,37 +5,55 @@ import Row from '@/components/Row/Row'
 import Request from '@/app/Request'
 
 async function getPopular() {
-  const res = await fetch(Request.requestPopular)
+  const res = await fetch(Request.requestPopular,
+    {
+      cache: "no-cache"
+    })
   const results = res.json();
   return results
 }
 
 async function getUpcoming() {
-  const res = await fetch(Request.requestUpcoming)
+  const res = await fetch(Request.requestUpcoming,
+    {
+      cache: "no-cache"
+    })
   const results = res.json();
   return results
 }
 
 async function getTrending() {
-  const res = await fetch(Request.requestTrending)
+  const res = await fetch(Request.requestTrending,
+    {
+      cache: "no-cache"
+    })
   const results = res.json();
   return results
 }
 
 async function getTopRated() {
-  const res = await fetch(Request.requestTopRated)
+  const res = await fetch(Request.requestTopRated,
+    {
+      cache: "no-cache"
+    })
   const results = res.json();
   return results
 }
 
 async function getHorror() {
-  const res = await fetch(Request.requestHorror)
+  const res = await fetch(Request.requestHorror,
+    {
+      cache: "no-cache"
+    })
   const results = res.json();
   return results
 }
 
 async function getTvShows() {
-  const res = await fetch(Request.requestTvShows)
+  const res = await fetch(Request.requestTvShows,
+    {
+      cache: "no-cache"
+    })
   const results = res.json();
   return results
 }
