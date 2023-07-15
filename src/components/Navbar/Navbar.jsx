@@ -39,7 +39,7 @@ const Navbar = async () => {
       <div className=''>
         <ul className='relative hidden lg:flex  items-center justify-center gap-4'>
           <li className='hover:bg-red-700 hover:rounded-3xl hover:text-white hover:px-3 hover:py-2 transition-all'>Home</li>
-          <li className='group '><a href="#" className='flex justify-center items-baseline hover:bg-red-700 hover:rounded-3xl hover:text-white hover:px-3 hover:py-2 transition-all'>Movies <span><FaSortDown/></span> </a>
+          <li className='group '><a href="/" className='flex justify-center items-baseline hover:bg-red-700 hover:rounded-3xl hover:text-white hover:px-3 hover:py-2 transition-all'>Movies <span><FaSortDown/></span> </a>
           <div className="hidden group-hover:block items-center justify-center transition-all absolute -right-40 top-11">
               <div className='w-[600px] h-[200px] border-red-300 bg-black/90 shadow-sm shadow-red-700'>
               <ul className="text-white grid grid-cols-4 gap-1 p-4 w-full">
