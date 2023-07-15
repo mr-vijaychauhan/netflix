@@ -1,10 +1,33 @@
 import Link from 'next/link'
 import {FaSortDown} from 'react-icons/fa'
+import Request from '@/app/Request'
 
-const Navbar = ({moviesGenres,tvGenres}) => {
+async function getAllMoviesGenres() {
+  const res = await fetch(Request.requestMoviesGenres,
+    {
+      cache: "no-cache"
+    })
+  const results = res.json();
+  return results
+}
 
-  const moviesAllGenres=moviesGenres.genres;
-  const tvAllGenres=tvGenres.genres;
+async function getAllTvShowGenres() {
+  const res = await fetch(Request.requestTvShowsGenres,
+    {
+      cache: "no-cache"
+    })
+  const results = res.json();
+  return results
+}
+
+const Navbar = async () => {
+
+  
+  const moviegenres = await getAllMoviesGenres(); 
+  const tvgenres = await getAllTvShowGenres(); 
+
+  const moviesAllGenres=moviegenres.genres;
+  const tvAllGenres=tvgenres.genres;
 
   return (
     <div
