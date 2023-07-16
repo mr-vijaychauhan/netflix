@@ -1,5 +1,7 @@
 const key=process.env.TMDB_API_KEY;
 
+/* https://api.themoviedb.org/3/movie/top_rated?api_key=5f0b2e3e71a6b80fe6c2ceb1c8d9c5af&language=en-US&page=1 */
+
 const requests = {
     requestPopular: `https://api.themoviedb.org/3/movie/popular?api_key=${key}&language=en-US&page=1`,
     requestTopRated: `https://api.themoviedb.org/3/movie/top_rated?api_key=${key}&language=en-US&page=1`,

@@ -49,8 +49,8 @@ const Row = ({ title, rowID,movies }) => {
           ref={sliderRef}
           // style={{ scrollBehavior: "smooth", overflowScrolling: "touch" }}
         >
-          {movieInfo.map(({ id, original_title, name,backdrop_path }) => (
-            <MovieCard key={id} id={id} title={original_title?original_title:name} poster={backdrop_path} />
+          {movieInfo.map(({ id, title, name,backdrop_path }) => (
+            <MovieCard key={id} id={id} title={title?title:name} poster={backdrop_path} />
           ))}
         </div>
         <MdChevronRight
